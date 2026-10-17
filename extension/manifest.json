@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "name": "Video Downloader",
+  "version": "1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAtOHFHp5mAKKSW2xX2n/G4gvIDntaqzvcSbGjLl0eGRff86TJff+O2+F8J3zW1TPZlX1E+ajqbYtJpwfr1xTyJU8sY24v19LFaWLgCVrqk+OerQIWcyQDFdZdP3RXKuldLKx/EaKacEiNGy2CxrV2YTpnosbeqrMuvREDCVWo13iSTvbh5+s6+4t2n2E/aio3X201eV1FeHJ0/ID6b347941sR/Bynb190LoE5HhkODFm/1kzWKAejjMy3z1A2VacLMCmdXzyMwuK0JJqgrnMr8hGIGzLBPaBXcxPh7yK3QNpvuhdFLIFi5ZZaVBLQi6/IpfZGQGkO+JTaW13P4B/4wIDAQAB",
+  "permissions": ["activeTab", "scripting", "storage", "nativeMessaging", "notifications"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": { "16": "icon-16.png", "32": "icon-32.png", "48": "icon-48.png" }
+  },
+  "icons": { "16": "icon-16.png", "32": "icon-32.png", "48": "icon-48.png", "128": "icon-128.png" },
+  "background": { "service_worker": "background.js", "scripts": ["background.js"] },
+  "browser_specific_settings": { "gecko": { "id": "video-downloader@local" } }
+}

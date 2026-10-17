@@ -1,0 +1,37 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  :root {
+    color-scheme: dark;
+    --bg: #0d0f14; --card: #161a22; --card-hover: #1c212b; --line: #262c38;
+    --text: #e8ecf3; --muted: #8b94a7; --accent: #2563eb; --accent2: #60a5fa;
+    --ok: #34d399; --err: #f87171;
+  }
+  * { box-sizing: border-box; }
+  body { width: 400px; max-height: 540px; margin: 0; background: var(--bg); color: var(--text); font: 13px/1.4 system-ui, sans-serif; }
+  header { display: flex; align-items: center; gap: 8px; padding: 14px 14px 10px; font-weight: 600; font-size: 14px; }
+  header img { width: 20px; height: 20px; }
+  header small { margin-left: auto; color: var(--muted); font-weight: 400; }
+  #list { display: grid; gap: 8px; padding: 0 12px 12px; }
+  #empty { padding: 28px 16px; text-align: center; color: var(--muted); }
+  .item { display: grid; grid-template-columns: 96px 1fr auto; gap: 10px; align-items: center; padding: 8px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; transition: background .15s; }
+  .item:hover { background: var(--card-hover); }
+  .item img { width: 96px; height: 60px; object-fit: cover; border-radius: 8px; background: var(--line); }
+  .info { min-width: 0; }
+  .info b, .info span { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .info span { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .info .err { color: var(--err); }
+  .bar { height: 6px; margin-top: 8px; background: var(--line); border-radius: 99px; overflow: hidden; display: none; }
+  .bar i { display: block; height: 100%; width: 0; border-radius: 99px; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width .25s ease; }
+  .bar.indet i { width: 40%; animation: slide 1.1s ease-in-out infinite; }
+  @keyframes slide { from { margin-left: -40%; } to { margin-left: 100%; } }
+  button { padding: 7px 14px; border: 0; border-radius: 99px; background: var(--accent); color: #fff; font: 600 12px system-ui; cursor: pointer; transition: filter .15s, transform .1s; min-width: 76px; }
+  button:hover:not(:disabled) { filter: brightness(1.15); }
+  button:active:not(:disabled) { transform: scale(.96); }
+  button:disabled { background: var(--line); color: var(--muted); cursor: default; }
+  .ok button { background: rgba(52, 211, 153, .15); color: var(--ok); }
+  .erro button { background: rgba(248, 113, 113, .15); color: var(--err); }
+</style>
+<header><img src="icon-48.png" alt=""> Video Downloader <small id="count"></small></header>
+<div id="list"></div>
+<script src="popup.js"></script>
